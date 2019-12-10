@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public class Team implements Serializable {
     private ArrayList teamMembers=new ArrayList();
-    public Team(){}
+    public Team(ArrayList teamMember){
+        this.teamMembers=teamMember;
+    }
     public ArrayList getTeamMembers() {
         return teamMembers;
     }

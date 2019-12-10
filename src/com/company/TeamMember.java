@@ -7,21 +7,29 @@ public class TeamMember implements Serializable{
     String username;
     String password;
     String name;
-    Double rate;
+    String rate;
     String rule;
     String script;
+    String state;
 
-    public TeamMember(String username, String password) {
+    public TeamMember(){}
+
+    public TeamMember(String username, String password, String state) {
         this.username = username;
         this.password = password;
+        this.state = state;
     }
 
-    public TeamMember(String username, String password,String name, String rate) {
+    public TeamMember(String username, String password,String name, String rate, String state) {
         this.username = username;
         this.password = password;
+        this.name = name;
+        this.rate = rate;
+        this.state = state;
+
     }
 
-    public TeamMember(String name, Double rate, String rule, String script){
+    public TeamMember(String name, String rate, String rule, String script){
         this.name = name;
         this.rate = rate;
         this.rule = rule;
@@ -50,10 +58,10 @@ public class TeamMember implements Serializable{
         return name;
     }
 
-    public void setRate(Double rate){
+    public void setRate(String rate){
         this.rate = rate;
     }
-    public Double getRate(){
+    public String getRate(){
         return rate;
     }
 
@@ -70,5 +78,14 @@ public class TeamMember implements Serializable{
     public String getScript(){
         return script;
     }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
 
 }

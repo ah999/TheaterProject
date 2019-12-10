@@ -11,11 +11,11 @@ public class Client {
         Scanner scanner = new Scanner(System.in); // Create scanner to allow keyboard input
         while(true) {
             System.out.print("INFO: Enter 1 to register\n Enter 2 to login\n Enter ´q´ to stop session\n");
-            String input = scanner.nextLine();
-            if ("q".equals(input)) {
+            String state = scanner.nextLine();
+            if ("q".equals(state)) {
                 System.out.println("Exit!"); // if keyboard input equal to ´q´ close client process
                 break;
-            }else if("1".equals(input)){
+            }else if("1".equals(state)){
                 System.out.print("Enter username :\n");
                 String username = scanner.nextLine(); // Waiting for keyboard input
                 System.out.println("Enter password :\n");
@@ -24,18 +24,19 @@ public class Client {
                 String name = scanner.nextLine();
                 System.out.println("Enter rate :\n");
                 String rate = scanner.nextLine();
-                TeamMember member = new TeamMember(username,password,name,rate);
-                ClientSocketTask clientRegistered = new ClientSocketTask(member, input); // create a new socket task
+                TeamMember member = new TeamMember(username,password,name,rate,state);
+                ClientSocketTask clientRegistered = new ClientSocketTask(member); // create a new socket task
                 clientRegistered.run(); //Run Task
 
-            }else if("2".equals(input)){
+            }else if("2".equals(state)){
 
                 System.out.print("Enter username :\n");
                 String username = scanner.nextLine(); // Waiting for keyboard input
                 System.out.println("Enter password :\n");
                 String password = scanner.nextLine();
-                TeamMember member = new TeamMember(username, password);
-                ClientSocketTask clientLogedIn = new ClientSocketTask(member, input);
+
+                TeamMember member = new TeamMember(username,password,state);
+                ClientSocketTask clientLogedIn = new ClientSocketTask(member);
                 clientLogedIn.run(); //Run Task
 
             }else {

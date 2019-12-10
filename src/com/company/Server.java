@@ -3,6 +3,7 @@ package com.company;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 
 public class Server {
@@ -11,10 +12,12 @@ public class Server {
      * Created by PR on 07.11.2017.*/
     private static Socket connection;  // Create Socket
     private static ServerSocket serverSocket;   // Create a Server Socket
-
+    static ArrayList<TeamMember> teamList = new ArrayList<TeamMember>();
+    static ArrayList <Script> scriptList = new ArrayList<Script>();
     public static void main(String[] args) throws IOException {
         int port = 1234; // initialize port number
         serverSocket = new ServerSocket(port);// Start a new server socket
+       
         while (true) {
             /***
              *  Connection with client */
@@ -22,6 +25,10 @@ public class Server {
             connection = serverSocket.accept(); // Wait and create new connection if a client request arrives
             ServerSocketTask serverTask = new ServerSocketTask(connection); // create a new socket task
             serverTask.run(); // Run Task
+            if(serverTask.requestObj.getState().equals("1")){
+                teamList.add(serverTask.requestObj);
+            }
+            System.out.println(teamList);
             /***
              /* Close socket */
             //System.out.println("ee");

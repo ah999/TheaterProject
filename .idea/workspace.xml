@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad9dd20e-4aa8-4108-9897-1ad0a2ad57bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ClientSocketTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ClientSocketTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ClientThreadPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ClientThreadPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ServerSocketTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ServerSocketTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ServerThreadPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/ServerThreadPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TheaterProject/com/company/TeamMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TheaterProject/com/company/TeamMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ClientSocketTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientSocketTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/ClientThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClientThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Reply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Request.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ServerSocketTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ServerSocketTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ServerThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ServerThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/TeamMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/TeamMember.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +128,7 @@
       <list>
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ClientThreadPool" />
         <item itemvalue="Application.ServerThreadPool" />
       </list>
@@ -128,7 +147,7 @@
       <workItem from="1572986411067" duration="2623000" />
       <workItem from="1574168511990" duration="8276000" />
       <workItem from="1574180089901" duration="21608000" />
-      <workItem from="1574691532774" duration="7873000" />
+      <workItem from="1574691532774" duration="28751000" />
     </task>
     <servers />
   </component>
@@ -145,16 +164,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/ClientSocketTask.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
