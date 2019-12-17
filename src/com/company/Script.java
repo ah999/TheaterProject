@@ -2,36 +2,24 @@ package com.company;
 
 public class Script {
     String name;
-    Team team;
-    Integer rate;
+    int rate;
 
-    public Script(String name, Team team, Integer rate) {
+    public Script(String name, int rate) {
         this.name = name;
-        this.team = team;
         this.rate = rate;
     }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
-
-    public Integer getRate() {
+    public int getRate() {
         return rate;
     }
-
-    public void setRate(Integer rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 

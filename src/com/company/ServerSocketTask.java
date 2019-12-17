@@ -5,8 +5,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerSocketTask implements Runnable{
-    /**
-     * Created by PR on 07.11.2017. */
 
     private Socket connection;  // Create Socket
     static ArrayList RegisteredMemberList=new ArrayList();
@@ -26,13 +24,10 @@ public class ServerSocketTask implements Runnable{
     @Override
     public void run() {
         try {
-            /***
-             *  Setting up input stream */
 
             ObjectInputStream wr = new ObjectInputStream(connection.getInputStream()); //Create a Request Object Buffer
             requestObj = (TeamMember) wr.readObject();
             ObjectOutputStream serverReply = new ObjectOutputStream(connection.getOutputStream()); //Create a Reply Buffer
-            //Create Reply
 
             if(requestObj.getState().equals("1")){
                 registeredList.setTeamMembers(Server.teamList);
@@ -46,8 +41,6 @@ public class ServerSocketTask implements Runnable{
                     }
                 }
                 }
-            /***
-             *  Setting up output stream */
 
             serverReply.close();
             wr.close();

@@ -5,8 +5,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
-    /**
-     * Created by PR on 07.11.2017.*/
+
     public static void main(String args[]) throws UnknownHostException, IOException {
         Scanner scanner = new Scanner(System.in); // Create scanner to allow keyboard input
         while(true) {
@@ -23,7 +22,7 @@ public class Client {
                 System.out.println("Enter name :\n");
                 String name = scanner.nextLine();
                 System.out.println("Enter rate :\n");
-                String rate = scanner.nextLine();
+                int rate = scanner.nextInt();
                 TeamMember member = new TeamMember(username,password,name,rate,state);
                 ClientSocketTask clientRegistered = new ClientSocketTask(member); // create a new socket task
                 clientRegistered.run(); //Run Task

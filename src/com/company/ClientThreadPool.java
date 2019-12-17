@@ -7,8 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ClientThreadPool {
-    /**
-     * * Created by PR on 07.11.2017.*/
+
     private static ExecutorService thPoolClient = Executors.newFixedThreadPool(15); //Create a pool of threads
     public static void main(String args[]) throws UnknownHostException, IOException {
         Scanner scanner = new Scanner(System.in); // Create scanner to allow keyboard input
@@ -27,7 +26,7 @@ public class ClientThreadPool {
                 System.out.println("Enter name :\n");
                 String name = scanner.nextLine();
                 System.out.println("Enter rate :\n");
-                String rate = scanner.nextLine();
+                int rate = scanner.nextInt();
                 TeamMember member = new TeamMember(username,password,name,rate,state);
                 thPoolClient.execute(new ClientSocketTask(member)); // create a new socket task
 

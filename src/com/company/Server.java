@@ -4,23 +4,34 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Random;
 
 
 public class Server {
-    /**
-     * Server wait for client message and reply
-     * Created by PR on 07.11.2017.*/
+
     private static Socket connection;  // Create Socket
     private static ServerSocket serverSocket;   // Create a Server Socket
     static ArrayList<TeamMember> teamList = new ArrayList<TeamMember>();
     static ArrayList <Script> scriptList = new ArrayList<Script>();
+    Random r =new Random();
     public static void main(String[] args) throws IOException {
         int port = 1234; // initialize port number
         serverSocket = new ServerSocket(port);// Start a new server socket
-       
+        Script s1 = new Script("Hamlet", 3);
+        Script s2 = new Script("Makbeth", 2);
+        Script s3 = new Script("Romio and Juliet", 1);
+        Script s4 = new Script("Othello", 3);
+        Script s5 = new Script("Julius Ceaser", 4);
+        scriptList.add(s1);
+        scriptList.add(s2);
+        scriptList.add(s3);
+        scriptList.add(s4);
+        scriptList.add(s5);
+
         while (true) {
-            /***
-             *  Connection with client */
+
             System.out.println("wait for connections");
             connection = serverSocket.accept(); // Wait and create new connection if a client request arrives
             ServerSocketTask serverTask = new ServerSocketTask(connection); // create a new socket task
@@ -28,12 +39,51 @@ public class Server {
             if(serverTask.requestObj.getState().equals("1")){
                 teamList.add(serverTask.requestObj);
             }
-            System.out.println(teamList);
-            /***
-             /* Close socket */
-            //System.out.println("ee");
+            if(teamList.size()>=3){
+                createTeam();
+                System.out.println(teamList);
 
+            }if(serverTask.requestObj.getState().equals("2")){
+
+            }
             connection.close(); // close Socket connection
         }
     }
+
+    private static TeamMember getRandomMember(){
+        int memberIndex = new Random().nextInt(teamList.size());
+        TeamMember member = teamList.get(memberIndex);
+        teamList.remove(memberIndex);
+        return member;
+    }
+    private static void incrementRate(TeamMember m){
+        int r = m.getRate()+1;
+        m.setRate(r);
+        teamList.add(m);
+    }
+    private static void createTeam() {
+        ArrayList<TeamMember> team = new ArrayList<TeamMember>();
+        Team T = new Team();
+        int rateSum = 0;
+        for (int i = 0; i < 3; i++) {
+            TeamMember m = getRandomMember();
+            team.add(m);
+            incrementRate(m);
+        }
+        for (TeamMember m : team) {
+            int i = m.getRate();
+            rateSum += i;
+        }
+        Double avgR = new Double(rateSum / 3);
+        int avgRate = avgR.intValue();
+        for (Script script : scriptList) {
+            if (avgRate == script.getRate()) {
+                T = new Team(team, avgRate, script);
+                for(TeamMember m : team){
+                    m.setScript(script.getName());
+                }
+            }
+        }
+    }
+
 }

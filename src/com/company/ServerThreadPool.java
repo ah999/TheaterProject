@@ -8,8 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ServerThreadPool {
-    /**
-     * * Created by PR on 07.11.2017.*/
+
     private static Socket connection; //Create Socket
     private static ServerSocket serverSocket; //Create a Server Socket
     static ArrayList R = new ArrayList();
