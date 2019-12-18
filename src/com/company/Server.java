@@ -1,5 +1,6 @@
 package com.company;
 
+import java.beans.beancontext.BeanContextMembershipEvent;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -15,15 +16,19 @@ public class Server {
     private static ServerSocket serverSocket;   // Create a Server Socket
     static ArrayList<TeamMember> teamList = new ArrayList<TeamMember>();
     static ArrayList <Script> scriptList = new ArrayList<Script>();
+    static ArrayList<String> roles =new ArrayList<String>();
     Random r =new Random();
     public static void main(String[] args) throws IOException {
         int port = 1234; // initialize port number
         serverSocket = new ServerSocket(port);// Start a new server socket
-        Script s1 = new Script("Hamlet", 3);
-        Script s2 = new Script("Makbeth", 2);
-        Script s3 = new Script("Romio and Juliet", 1);
+        roles.add("main role");
+        roles.add("part role 1");
+        roles.add("part role 2");
+        Script s1 = new Script("Hamlet", 3, roles);
+        Script s2 = new Script("Makbeth", 2,roles);
+        Script s3 = new Script("Romio and Juliet", 1,roles);
         Script s4 = new Script("Othello", 3);
-        Script s5 = new Script("Julius Ceaser", 4);
+        Script s5 = new Script("Julius Ceaser", 4,roles);
         scriptList.add(s1);
         scriptList.add(s2);
         scriptList.add(s3);
@@ -42,8 +47,6 @@ public class Server {
             if(teamList.size()>=3){
                 createTeam();
                 System.out.println(teamList);
-
-            }if(serverTask.requestObj.getState().equals("2")){
 
             }
             connection.close(); // close Socket connection
@@ -81,6 +84,10 @@ public class Server {
                 T = new Team(team, avgRate, script);
                 for(TeamMember m : team){
                     m.setScript(script.getName());
+                    int index = new Random().nextInt(roles.size());
+                    String role = roles.get(index);
+                    System.out.println(role);
+                    m.setRole(role);
                 }
             }
         }

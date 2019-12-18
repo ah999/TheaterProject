@@ -37,7 +37,7 @@ public class ClientSocketTask implements Runnable {
                 System.out.println("Server replied: " + member.getName() + " is registered successfully "); //Print the Server reply
 
             }else if(clientRequest.getState().equals("2")){
-                System.out.println("Server replied: The member name: " + member.getName() + "\n The member rate: "+member.getRate()+"\n The Script: "+member.getScript()); //Print the Server reply
+                System.out.println("Server replied: The member name: " + member.getName() + "\n The member rate: "+member.getRate()+"\n The Script: "+member.getScript()+"\n The role: "+member.getRole()); //Print the Server reply
             }else{
                 System.out.println("The member doesn't exist !!");
             }

@@ -15,11 +15,6 @@ public class ServerSocketTask implements Runnable{
     private static Team registeredList = new Team(Server.teamList);
     TeamMember requestObj;
 
-    public void createUserInfo(){
-        String name;
-        Integer rate;
-
-    }
 
     @Override
     public void run() {
