@@ -20,19 +20,20 @@ public class TeamMember implements Serializable{
         this.state = state;
     }
 
-    public TeamMember(String username, String password,String name, int rate, String state) {
+    public TeamMember(String username, String password,String name, int rate,String role, String state) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.rate = rate;
+        this.role=role;
         this.state = state;
 
     }
 
-    public TeamMember(String name, int rate, String rule, String script){
+    public TeamMember(String name, int rate, String role, String script){
         this.name = name;
         this.rate = rate;
-        this.role = rule;
+        this.role = role;
         this.script = script;
 
     }

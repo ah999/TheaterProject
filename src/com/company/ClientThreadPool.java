@@ -21,21 +21,31 @@ public class ClientThreadPool {
             }else if("1".equals(state)){
                 System.out.print("Enter username :\n");
                 String username = scanner.nextLine(); // Waiting for keyboard input
+                if(username.isEmpty()){System.out.println("please enter a username"); username=scanner.nextLine();}
                 System.out.println("Enter password :\n");
                 String password = scanner.nextLine();
+                if(password.isEmpty()){System.out.println("please enter a password"); password=scanner.nextLine();}
                 System.out.println("Enter name :\n");
                 String name = scanner.nextLine();
+                if(name.isEmpty()){System.out.println("please enter a name"); name=scanner.nextLine();}
+
                 System.out.println("Enter rate :\n");
                 int rate = scanner.nextInt();
-                TeamMember member = new TeamMember(username,password,name,rate,state);
+                if(rate == 0){System.out.println("please enter a rate = 1"); username=scanner.nextLine();}
+
+                System.out.println("choose a role from (main role, part role 1, part role 2)");
+                String role = scanner.nextLine();
+                TeamMember member = new TeamMember(username,password,name,rate,role,state);
                 thPoolClient.execute(new ClientSocketTask(member)); // create a new socket task
 
             }else if("2".equals(state)){
 
                 System.out.print("Enter username :\n");
                 String username = scanner.nextLine(); // Waiting for keyboard input
+                if(username.isEmpty()){System.out.println("please enter a username"); username=scanner.nextLine();}
                 System.out.println("Enter password :\n");
                 String password = scanner.nextLine();
+                if(password.isEmpty()){System.out.println("please enter a password"); password=scanner.nextLine();}
                 TeamMember member = new TeamMember(username, password, state);
                 thPoolClient.execute(new ClientSocketTask(member)); // create a new socket task
 

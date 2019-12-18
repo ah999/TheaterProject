@@ -64,6 +64,9 @@ public class Server {
         m.setRate(r);
         teamList.add(m);
     }
+    private static void fillTheRoles(String role){
+        Server.roles.add(role);
+    }
     private static void createTeam() {
         ArrayList<TeamMember> team = new ArrayList<TeamMember>();
         Team T = new Team();
@@ -84,10 +87,14 @@ public class Server {
                 T = new Team(team, avgRate, script);
                 for(TeamMember m : team){
                     m.setScript(script.getName());
-                    int index = new Random().nextInt(roles.size());
+                    int index = new Random().nextInt(script.roles.size());
                     String role = roles.get(index);
-                    System.out.println(role);
+                    roles.remove(index);
+                    if(m.getRole().isEmpty()){
                     m.setRole(role);
+                    }
+                        
+
                 }
             }
         }
